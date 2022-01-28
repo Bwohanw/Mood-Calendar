@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="calendar">
+            <div class="month">
+                <i class="fas fa-angle-left prev"></i>
+                <div class="date">
+                    <h1></h1>
+                    <p></p>
+                </div>
+                <button id="toggle">&#128516</button>
+                    <div class ="emojilist" id="emoji" style="display:none">
+                        <div id = "happy-1" style = "font-size: 15px">&#128515</div>
+                        <div id = "happy-2" style = "font-size: 15px">&#128515</div>
+                        <div id = "happy-3" style = "font-size: 15px">&#128515</div>
+                        <div id = "happy-4" style = "font-size: 15px">&#128515</div>
+                        <div id = "happy-5" style = "font-size: 15px">&#128515</div>
+                        <div id = "happy-6" style = "font-size: 15px">&#128515</div>
+                        <div id = "happy-7" style = "font-size: 15px">&#128515</div>
+                        <div id = "happy-8" style = "font-size: 15px">&#128515</div>
+                        <div id = "happy-9" style = "font-size: 15px">&#128515</div>
+                        <div id = "happy-10" style = "font-size: 15px">&#128515</div>
+                        <div id = "cool-1" style="font-size:15px">&#128526</div>
+                        <div id = "cool-2" style="font-size:15px">&#128526</div>
+                        <div id = "cool-3" style="font-size:15px">&#128526</div>
+                        <div id = "cool-4" style="font-size:15px">&#128526</div>
+                        <div id = "cool-5" style="font-size:15px">&#128526</div>
+                        <div id = "cool-6" style="font-size:15px">&#128526</div>
+                        <div id = "cool-7" style="font-size:15px">&#128526</div>
+                        <div id = "cool-8" style="font-size:15px">&#128526</div>
+                        <div id = "cool-9" style="font-size:15px">&#128526</div>
+                        <div id = "cool-10" style="font-size:15px">&#128526</div>
+                        <div id = "relief-1" style="font-size:15px">&#128524</div>
+                        <div id = "relief-2" style="font-size:15px">&#128524</div>
+                        <div id = "relief-3" style="font-size:15px">&#128524</div>
+                        <div id = "relief-4" style="font-size:15px">&#128524</div>
+                        <div id = "relief-5" style="font-size:15px">&#128524</div>
+                        <div id = "relief-6" style="font-size:15px">&#128524</div>
+                        <div id = "relief-7" style="font-size:15px">&#128524</div>
+                        <div id = "relief-8" style="font-size:15px">&#128524</div>
+                        <div id = "relief-9" style="font-size:15px">&#128524</div>
+                        <div id = "relief-10" style="font-size:15px">&#128524</div>
+                        <div id = "whatever-1" style="font-size:15px">&#128530</div>
+                        <div id = "whatever-2" style="font-size:15px">&#128530</div>
+                        <div id = "whatever-3" style="font-size:15px">&#128530</div>
+                        <div id = "whatever-4" style="font-size:15px">&#128530</div>
+                        <div id = "whatever-5" style="font-size:15px">&#128530</div>
+                        <div id = "whatever-6" style="font-size:15px">&#128530</div>
+                        <div id = "whatever-7" style="font-size:15px">&#128530</div>
+                        <div id = "whatever-8" style="font-size:15px">&#128530</div>
+                        <div id = "whatever-9" style="font-size:15px">&#128530</div>
+                        <div id = "whatever-10" style="font-size:15px">&#128530</div>
+                        <div id = "frown-1" style="font-size:15px">&#128533</div>
+                        <div id = "frown-2" style="font-size:15px">&#128533</div>
+                        <div id = "frown-3" style="font-size:15px">&#128533</div>
+                        <div id = "frown-4" style="font-size:15px">&#128533</div>
+                        <div id = "frown-5" style="font-size:15px">&#128533</div>
+                        <div id = "frown-6" style="font-size:15px">&#128533</div>
+                        <div id = "frown-7" style="font-size:15px">&#128533</div>
+                        <div id = "frown-8" style="font-size:15px">&#128533</div>
+                        <div id = "frown-9" style="font-size:15px">&#128533</div>
+                        <div id = "frown-10" style="font-size:15px">&#128533</div>
+                        <div id= "anxious-1" style="font-size:15px">&#128534</div>
+                        <div id= "anxious-2" style="font-size:15px">&#128534</div>
+                        <div id= "anxious-3" style="font-size:15px">&#128534</div>
+                        <div id= "anxious-4" style="font-size:15px">&#128534</div>
+                        <div id= "anxious-5" style="font-size:15px">&#128534</div>
+                        <div id= "anxious-6" style="font-size:15px">&#128534</div>
+                        <div id= "anxious-7" style="font-size:15px">&#128534</div>
+                        <div id= "anxious-8" style="font-size:15px">&#128534</div>
+                        <div id= "anxious-9" style="font-size:15px">&#128534</div>
+                        <div id= "anxious-10" style="font-size:15px">&#128534</div>
+                        <div id= "wink-1" style="font-size:15px">&#128540</div>
+                        <div id= "wink-2" style="font-size:15px">&#128540</div>
+                        <div id= "wink-3" style="font-size:15px">&#128540</div>
+                        <div id= "wink-4" style="font-size:15px">&#128540</div>
+                        <div id= "wink-5" style="font-size:15px">&#128540</div>
+                        <div id= "wink-6" style="font-size:15px">&#128540</div>
+                        <div id= "wink-7" style="font-size:15px">&#128540</div>
+                        <div id= "wink-8" style="font-size:15px">&#128540</div>
+                        <div id= "wink-9" style="font-size:15px">&#128540</div>
+                        <div id= "wink-10" style="font-size:15px">&#128540</div>
+                        <div id= "sob-1" style="font-size:15px">&#128557</div>
+                        <div id= "sob-2" style="font-size:15px">&#128557</div>
+                        <div id= "sob-3" style="font-size:15px">&#128557</div>
+                        <div id= "sob-4" style="font-size:15px">&#128557</div>
+                        <div id= "sob-5" style="font-size:15px">&#128557</div>
+                        <div id= "sob-6" style="font-size:15px">&#128557</div>
+                        <div id= "sob-7" style="font-size:15px">&#128557</div>
+                        <div id= "sob-8" style="font-size:15px">&#128557</div>
+                        <div id= "sob-9" style="font-size:15px">&#128557</div>
+                        <div id= "sob-10" style="font-size:15px">&#128557</div>
+                        <div id= "eyeroll-1" style="font-size:15px">&#128580</div>
+                        <div id= "eyeroll-2" style="font-size:15px">&#128580</div>
+                        <div id= "eyeroll-3" style="font-size:15px">&#128580</div>
+                        <div id= "eyeroll-4" style="font-size:15px">&#128580</div>
+                        <div id= "eyeroll-5" style="font-size:15px">&#128580</div>
+                        <div id= "eyeroll-6" style="font-size:15px">&#128580</div>
+                        <div id= "eyeroll-7" style="font-size:15px">&#128580</div>
+                        <div id= "eyeroll-8" style="font-size:15px">&#128580</div>
+                        <div id= "eyeroll-9" style="font-size:15px">&#128580</div>
+                        <div id= "eyeroll-10" style="font-size:15px">&#128580</div>
+                        <div id= "grimace-1" style="font-size:15px">&#128556</div>
+                        <div id= "grimace-2" style="font-size:15px">&#128556</div>
+                        <div id= "grimace-3" style="font-size:15px">&#128556</div>
+                        <div id= "grimace-4" style="font-size:15px">&#128556</div>
+                        <div id= "grimace-5" style="font-size:15px">&#128556</div>
+                        <div id= "grimace-6" style="font-size:15px">&#128556</div>
+                        <div id= "grimace-7" style="font-size:15px">&#128556</div>
+                        <div id= "grimace-8" style="font-size:15px">&#128556</div>
+                        <div id= "grimace-9" style="font-size:15px">&#128556</div>
+                        <div id= "grimace-10" style="font-size:15px">&#128556</div>
+                        <div id= "pissed-1" style="font-size:15px">&#129324</div>
+                        <div id= "pissed-2" style="font-size:15px">&#129324</div>
+                        <div id= "pissed-3" style="font-size:15px">&#129324</div>
+                        <div id= "pissed-4" style="font-size:15px">&#129324</div>
+                        <div id= "pissed-5" style="font-size:15px">&#129324</div>
+                        <div id= "pissed-6" style="font-size:15px">&#129324</div>
+                        <div id= "pissed-7" style="font-size:15px">&#129324</div>
+                        <div id= "pissed-8" style="font-size:15px">&#129324</div>
+                        <div id= "pissed-9" style="font-size:15px">&#129324</div>
+                        <div id= "pissed-10" style="font-size:15px">&#129324</div>
+                        <div id= "wtf-1" style="font-size:15px">&#10067</div>
+                        <div id= "wtf-2" style="font-size:15px">&#10067</div>
+                        <div id= "wtf-3" style="font-size:15px">&#10067</div>
+                        <div id= "wtf-4" style="font-size:15px">&#10067</div>
+                        <div id= "wtf-5" style="font-size:15px">&#10067</div>
+                        <div id= "wtf-6" style="font-size:15px">&#10067</div>
+                        <div id= "wtf-7" style="font-size:15px">&#10067</div>
+                        <div id= "wtf-8" style="font-size:15px">&#10067</div>
+                        <div id= "wtf-9" style="font-size:15px">&#10067</div>
+                        <div id= "wtf-10" style="font-size:15px">&#10067</div>
+                    </div>
+                <i class="fas fa-angle-right next"></i>
+            </div>
+            <div class="weekdays">
+                <div  ondrop="drop(event)" ondragover="allowDrop(event)">Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div class="days">
+            </div>
+            <div class = "remove" id = "trash">
+                <button id="reload">Restore Session</button>
+                Drag here to remove
+                <button id="reset">Doubleclick to Reset</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
