@@ -83,18 +83,6 @@ addEventListener('click', () => {
 renderCalendar();
 
 
-/*const targetDiv = document.getElementById("emoji");
-const btn = document.getElementById("toggle");
-btn.onclick = function () {
-  if (targetDiv.style.display !== "none") {
-    targetDiv.style.display = "none";
-  } else {
-    targetDiv.style.display = "block";
-  }
-};
-*/
-
-
 const emojis = [
   "happy",
   "cool",
@@ -112,21 +100,7 @@ const emojis = [
 
 const emojicount = emojis.length;
 
-
-/*const renderEmojis = () => {
-  const emojilist = document.querySelector('.emojilist');
-
-  let emojiGeneration = "";
-
-
-  emojiGeneration += `<div class = "test" id = "test-1">${emojis[0]}</div>`;
-  emojiGeneration += `<div class = "test" id = "test-2">${emojis[1]}</div>`
-  emojilist.innerHTML = emojiGeneration;
-}*/
-
-
-
-//Button functionality
+//Makes the emojis appear upon clicking the emoji picture
 var emoji = document.getElementById("emoji");
 document.getElementById("toggle").addEventListener('click', () => {
     //renderEmojis();
@@ -136,23 +110,6 @@ document.getElementById("toggle").addEventListener('click', () => {
         emoji.style.display = "block";
     }
 })
-
-
-/*function allowDrop(ev) {
-    ev.preventDefault();
-  }
-  
-  function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-  }
-  
-  function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-  }
-attempt at making a drag and drop, temporarily replaced with just draggable div
-*/
 
 //making the emojis draggable
 //makes the tests 1-j draggable
@@ -178,15 +135,6 @@ function dragElement(elmnt) {
       document.onmouseup = closeDragElement;
       // call a function whenever the cursor moves:
       document.onmousemove = elementDrag;
-      for (let i = 0; i < emojicount; i++) {
-        for(let j = 1; j <= 10; j++) {
-      var offsets = document.getElementById(`${emojis[i]}-${j}`).getBoundingClientRect();
-      var top = offsets.top;
-      var left = offsets.left;
-      localStorage.setItem(`${emojis[i]}-${j}top`, `${top}`);
-      localStorage.setItem(`${emojis[i]}-${j}left`, `${left}`);
-        }
-      }
     }
   
     function elementDrag(e) {
@@ -206,6 +154,16 @@ function dragElement(elmnt) {
       // stop moving when mouse button is released:
       document.onmouseup = null;
       document.onmousemove = null;
+      // saves the current position of each emoji
+      for (let i = 0; i < emojicount; i++) {
+        for(let j = 1; j <= 10; j++) {
+      var offsets = document.getElementById(`${emojis[i]}-${j}`).getBoundingClientRect();
+      var top = offsets.top;
+      var left = offsets.left;
+      localStorage.setItem(`${emojis[i]}-${j}top`, `${top}`);
+      localStorage.setItem(`${emojis[i]}-${j}left`, `${left}`);
+        }
+      }
     }
   }
 
@@ -215,18 +173,6 @@ function touching(d1,d2){
   let oy = Math.abs(d1.y - d2.y) < (d1.y < d2.y ? d2.height : d1.height);
   return ox && oy;
 }
-
-/*(for (let i = 1; i <= emojicount; i++) {
-  document.getElementById(`test-${i}`).addEventListener('click', () => {
-    let d1 = document.getElementById(`test-${i}`).getBoundingClientRect();
-    let d2 = document.getElementById('trash').getBoundingClientRect();
-    if (d2.top < d1.bottom - 10) {
-      var test = document.getElementById(`test-${i}`);
-      test.style.top = 10 + 'px';
-    }
-  })
-}*/
-// makes the delete button work for all tests 0-i
 
 for (let j = 0; j < emojicount; j++) {
 for(let i = 1; i <= 10; i++) {
@@ -242,13 +188,18 @@ document.getElementById(`${emojis[j]}-${i}`).addEventListener('click', () => {
       test.style.top = 5 + (20*(j-6))+'px';
       test.style.left = 35.5+'rem';
     }
+    var pos = document.getElementById(`${emojis[j]}-${i}`).getBoundingClientRect();
+    var t = pos.top;
+    var l = pos.left;
+    localStorage.setItem(`${emojis[j]}-${i}top`, `${t}`);
+    localStorage.setItem(`${emojis[j]}-${i}left`, `${l}`);
   }
 })
 }
 }
 //makes delete button work for everything
 
-document.getElementById("reset").addEventListener('click', () => {
+document.getElementById("reset").addEventListener('dblclick', () => {
   for (let j = 0; j < emojicount; j++) {
     for(let i = 1; i <= 10; i++) {
         var test = document.getElementById(`${emojis[j]}-${i}`);
