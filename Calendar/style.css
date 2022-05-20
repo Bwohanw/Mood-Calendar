@@ -219,3 +219,17 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.text {
+  height:28rem;
+  width:100%;
+  border: .1px solid dimgray;
+}
+.notes {
+  font-size:2rem;
+  border-radius: 2rem;
+  justify-content: center;
+  padding-left: 19rem;
+}
+
+

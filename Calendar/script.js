@@ -50,12 +50,14 @@ const renderCalendar = () => {
     for(let x = firstDayIndex; x > 0; x--) {
         days += `<div class = "prev-date">${prevLastDay - x + 1}</div>`;
     }
-    
+
     for(let i = 1; i <= lastDay; i++) {
+        var thisDay = new Date(date.getFullYear(), date.getMonth(), 1);
+        thisDay.setDate(i);
         if(i === new Date().getDate() && 
         date.getMonth() === new Date().getMonth() && 
         date.getFullYear() === new Date().getFullYear()) {
-            days += `<div class="today">${i}</div>`;
+            days += `<div class="today" id="today">${i}</div>`;
         } else {
             days += `<div>${i}</div>`;
         }
@@ -65,8 +67,9 @@ const renderCalendar = () => {
         days += `<div class="next-date">${j}</div>`;
     }
     monthDays.innerHTML = days;
-}
 
+
+}
 
 document.querySelector('.prev').
 addEventListener('click', () => {
@@ -226,3 +229,105 @@ document.getElementById("reload").addEventListener('click', () => {
   }
 })
 
+
+
+document.getElementById("text").style.display = "none";
+document.getElementById("close").style.display = "none";
+document.getElementById("note").style.display = "none";
+
+var isClicked = false;
+try {
+document.getElementById("today").addEventListener('click', () => {
+  if (!isClicked) {
+    var calendar = document.getElementById("calendar");
+      calendar.style.height = "80rem";
+      document.getElementById("text").style.display = "block";
+      document.getElementById("close").style.display = "block";
+      document.getElementById("note").style.display = "block";
+      document.getElementById("text").value = "";
+      try {
+        document.getElementById("text").value = localStorage.getItem("today");
+      } catch {
+      }
+      isClicked = true;
+  }
+})
+} catch {
+}
+
+document.getElementById("close").addEventListener('click', () => {
+  if (isClicked) {
+    isClicked = false;
+    localStorage.setItem("today", document.getElementById("text").value);
+    calendar.style.height = "52rem";
+    document.getElementById("text").style.display = "none";
+    document.getElementById("close").style.display = "none";
+    document.getElementById("note").style.display = "none";
+  }
+})
+
+const d = document.getElementsByClassName("days");
+for (let i = 0; i < d.length; i++) {
+  d[i].addEventListener('click', () => {
+    if (!isClicked) {
+      var calendar = document.getElementById("calendar");
+      calendar.style.height = "80rem";
+      document.getElementById("text").style.display = "block";
+      document.getElementById("close").style.display = "block";
+      document.getElementById("note").style.display = "block";
+      document.getElementById("text").value = "";
+      try {
+        document.getElementById("text").value = localStorage.getItem("today");
+      } catch {
+      }
+      isClicked = true;
+    }
+  })
+}
+
+/*var isClicked = false;
+var currentbox = "";
+
+//testing add text box        
+const d = document.getElementsByClassName("days");
+//THIS ^ IS 1 FOR SOME REASON
+window.onload=function() {
+for (let i = 0; i < new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate(); i++) {
+  var thisDay = new Date(date.getFullYear(), date.getMonth()+1, 1);
+  thisDay.setDate(i);
+  var theID = document.getElementById(`${thisDay.getFullYear()}-${thisDay.getMonth()}-${thisDay.getDate()}`);
+  theID.addEventListener('click', () => {
+    if (!isClicked) {
+      var calendar = document.getElementById("calendar");
+      calendar.style.height = "80rem";
+      document.getElementById("text").style.display = "block";
+      document.getElementById("close").style.display = "block";
+      document.getElementById("text").value = "";
+        document.getElementById("text").value = `${theID}`;
+      isClicked = true;
+    }
+  })
+document.getElementById("close").addEventListener('click', ()=> {
+  if (isClicked) {
+    isClicked = false;
+    calendar.style.height = "52rem";
+    localStorage.setItem(d[i].id, document.getElementById("text").value);
+    document.getElementById("text").style.display = "none";
+    document.getElementById("close").style.display = "none";
+  }
+})
+}
+}
+
+/*var isClicked = false;
+//testing adding notes
+var today = document.getElementById("today").addEventListener('click', () => {
+  var calendar = document.getElementById("calendar");
+  if (!isClicked) {
+    calendar.style.height = "80rem";
+    isClicked = true;
+  } else {
+    calendar.style.height = "52rem";
+    isClicked = false;
+  }
+})*/
