@@ -17,7 +17,7 @@ body {
   .container {
     width: 100%;
     height: 52rem;
-    background-color: #12121f;
+    /*background-color: #12121f;*/
     color: #eee;
     display: flex;
     justify-content: center;
@@ -38,11 +38,11 @@ body {
   border-color:#222227
 }
 
+
 .emojilist{
   width:5rem;
   height: 5rem;
   display:flex;
-  color:aqua;
   overflow-x: hidden;
   overflow-y:auto;
 }
@@ -112,6 +112,27 @@ body {
   top: 105px;
 }
 
+[id^="determined-"]{
+  position:absolute;
+  left:35.5rem;
+  top:125px;
+}
+[id^="cowboy-"]{
+  position:absolute;
+  left:33rem;
+  top:125px;
+}
+[id^="angel-"]{
+  position:absolute;
+  left:33rem;
+  top:145px;
+}
+[id^="devil-"]{
+  position:absolute;
+  left:35.5rem;
+  top:145px;
+}
+
 /*#test-1{
   position:absolute;
   top: 10px;
@@ -152,9 +173,14 @@ body {
   
   .month p {
     font-size: 1.6rem;
+    /*color:aqua;*/
+  }
+
+  .date p {
     color:aqua;
   }
-  
+
+
   .weekdays {
     width: 100%;
     height: 5rem;
@@ -171,7 +197,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+    /*text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);*/
   }
   
   .days {
@@ -189,12 +215,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+    /*text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);*/
     transition: background-color 0.2s;
   }
   
   .days div:hover:not(.today) {
-    background-color: #262626;
+    /*background-color: #262626;*/
     border: 0.2rem solid #777;
     cursor: pointer;
   }
@@ -232,4 +258,355 @@ body {
   padding-left: 19rem;
 }
 
+.colordiv {
+  overflow-y:auto;
+  width: 90px;
+  height: 100px;
+}
 
+.colordiv-kid {
+  float:left;
+  padding: 2px;
+}
+
+.background-color {
+  width:2px;
+  float:left;
+  position:relative;
+}
+
+.dates-color {
+  width:2px;
+  float:left;
+  position:relative;
+}
+
+.primary-color {
+  width:2px;
+}
+
+.font-color {
+  width:2px;
+}
+
+
+.bg-1 {
+  color:azure;
+}
+
+.bg-2 {
+  color:#222227;
+}
+
+.layout-reset {
+  color:#eee;
+}
+
+.dates-1 {
+  color:firebrick;
+}
+.dates-2 {
+  color:red;
+}
+.dates-3 {
+  color: crimson;
+}
+.dates-4 {
+  color:orangered ;
+}
+.dates-5 {
+  color: orange;
+}
+.dates-6 {
+  color: gold;
+}
+.dates-7 {
+  color: green;
+}
+.dates-8 {
+  color:#167e56;
+}
+.dates-9 {
+  color:seagreen;
+}
+.dates-10 {
+  color: springgreen;
+}
+.dates-11 {
+  color: limegreen;
+}
+.dates-12 {
+  color: blue;
+}
+.dates-13 {
+  color: royalblue;
+}
+.dates-14 {
+  color: deepskyblue;
+}
+.dates-15 {
+  color:lightskyblue;
+}
+.dates-16 {
+  color:darkturquoise;
+}
+.dates-17 {
+  color: aquamarine;
+}
+.dates-18 {
+  color: aqua;
+}
+.dates-19 {
+  color: blueviolet;
+}
+.dates-20 {
+  color: darkviolet;
+}
+.dates-21 {
+  color: orchid;
+}
+.dates-22 {
+  color:violet;
+}
+.dates-23 {
+  color:#ff6666;
+}
+.dates-24 {
+  color: palevioletred;
+}
+.dates-25 {
+  color: pink;
+}
+.dates-26 {
+  color: lavenderblush;
+}
+.dates-27 {
+  color: beige;
+}
+.dates-28 {
+  color: azure;
+}
+.dates-29 {
+  color:lightskyblue;
+}
+.dates-30 {
+  color:mistyrose;
+}
+.dates-31 {
+  color: lemonchiffon;
+}
+.dates-32 {
+  color: mintcream;
+}
+.dates-33 {
+  color: #eee;
+}
+.dates-34 {
+  color: black;
+}
+
+.pr-1 {
+  color:firebrick;
+}
+.pr-2 {
+  color:red;
+}
+.pr-3 {
+  color: crimson;
+}
+.pr-4 {
+  color:orangered ;
+}
+.pr-5 {
+  color: orange;
+}
+.pr-6 {
+  color: gold;
+}
+.pr-7 {
+  color: green;
+}
+.pr-8 {
+  color:#167e56;
+}
+.pr-9 {
+  color:seagreen;
+}
+.pr-10 {
+  color: springgreen;
+}
+.pr-11 {
+  color: limegreen;
+}
+.pr-12 {
+  color: blue;
+}
+.pr-13 {
+  color: royalblue;
+}
+.pr-14 {
+  color: deepskyblue;
+}
+.pr-15 {
+  color:lightskyblue;
+}
+.pr-16 {
+  color:darkturquoise;
+}
+.pr-17 {
+  color: aquamarine;
+}
+.pr-18 {
+  color: aqua;
+}
+.pr-19 {
+  color: blueviolet;
+}
+.pr-20 {
+  color: darkviolet;
+}
+.pr-21 {
+  color: orchid;
+}
+.pr-22 {
+  color:violet;
+}
+.pr-23 {
+  color:#ff6666;
+}
+.pr-24 {
+  color: palevioletred;
+}
+.pr-25 {
+  color: pink;
+}
+.pr-26 {
+  color: lavenderblush;
+}
+.pr-27 {
+  color: beige;
+}
+.pr-28 {
+  color: azure;
+}
+.pr-29 {
+  color:lightskyblue;
+}
+.pr-30 {
+  color:mistyrose;
+}
+.pr-31 {
+  color: lemonchiffon;
+}
+.pr-32 {
+  color: mintcream;
+}
+.pr-33 {
+  color: #eee;
+}
+.pr-34 {
+  color: black;
+}
+
+.fo-1 {
+  color:firebrick;
+}
+.fo-2 {
+  color:red;
+}
+.fo-3 {
+  color: crimson;
+}
+.fo-4 {
+  color:orangered ;
+}
+.fo-5 {
+  color: orange;
+}
+.fo-6 {
+  color: gold;
+}
+.fo-7 {
+  color: green;
+}
+.fo-8 {
+  color:#167e56;
+}
+.fo-9 {
+  color:seagreen;
+}
+.fo-10 {
+  color: springgreen;
+}
+.fo-11 {
+  color: limegreen;
+}
+.fo-12 {
+  color: blue;
+}
+.fo-13 {
+  color: royalblue;
+}
+.fo-14 {
+  color: deepskyblue;
+}
+.fo-15 {
+  color:lightskyblue;
+}
+.fo-16 {
+  color:darkturquoise;
+}
+.fo-17 {
+  color: aquamarine;
+}
+.fo-18 {
+  color: aqua;
+}
+.fo-19 {
+  color: blueviolet;
+}
+.fo-20 {
+  color: darkviolet;
+}
+.fo-21 {
+  color: orchid;
+}
+.fo-22 {
+  color:violet;
+}
+.fo-23 {
+  color:#ff6666;
+}
+.fo-24 {
+  color: palevioletred;
+}
+.fo-25 {
+  color: pink;
+}
+.fo-26 {
+  color: lavenderblush;
+}
+.fo-27 {
+  color: beige;
+}
+.fo-28 {
+  color: azure;
+}
+.fo-29 {
+  color:lightskyblue;
+}
+.fo-30 {
+  color:mistyrose;
+}
+.fo-31 {
+  color: lemonchiffon;
+}
+.fo-32 {
+  color: mintcream;
+}
+.fo-33 {
+  color: #eee;
+}
+.fo-34 {
+  color: black;
+}

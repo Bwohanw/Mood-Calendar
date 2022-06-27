@@ -67,14 +67,18 @@ const renderCalendar = () => {
         days += `<div class="next-date">${j}</div>`;
     }
     monthDays.innerHTML = days;
-
-
+    try {
+      var month = document.getElementById("month");
+      document.getElementById("today").style.backgroundColor = window.getComputedStyle(month).backgroundColor;
+    } catch {
+    }
 }
 
 document.querySelector('.prev').
 addEventListener('click', () => {
     date.setMonth(date.getMonth() - 1);
     renderCalendar();
+    //document.querySelector('.date h1').innerHTML = window.getComputedStyle(month).color;
 })
 
 document.querySelector('.next').
@@ -93,12 +97,17 @@ const emojis = [
   "whatever",
   "frown",
   "anxious",
+  "cowboy",
+  "angel",
+//divider between columns
   "wink",
   "sob",
   "eyeroll",
   "grimace",
   "pissed",
-  "wtf"
+  "wtf",
+  "determined",
+  "devil"
 ];
 
 const emojicount = emojis.length;
@@ -106,7 +115,6 @@ const emojicount = emojis.length;
 //Makes the emojis appear upon clicking the emoji picture
 var emoji = document.getElementById("emoji");
 document.getElementById("toggle").addEventListener('click', () => {
-    //renderEmojis();
     if (emoji.style.display !== "none") {
         emoji.style.display = "none";
     } else {
@@ -184,11 +192,11 @@ document.getElementById(`${emojis[j]}-${i}`).addEventListener('click', () => {
   let d2 = document.getElementById('trash').getBoundingClientRect();
   if (d2.top < d1.bottom - 10) {
     var test = document.getElementById(`${emojis[j]}-${i}`);
-    if (j <= 5) {
+    if (j <= (emojicount / 2) - 1) {
       test.style.top = 5 + (20*j)+'px';
       test.style.left = 33+`rem`;
     } else {
-      test.style.top = 5 + (20*(j-6))+'px';
+      test.style.top = 5 + (20*(j-(emojicount / 2)))+'px';
       test.style.left = 35.5+'rem';
     }
     var pos = document.getElementById(`${emojis[j]}-${i}`).getBoundingClientRect();
@@ -206,11 +214,11 @@ document.getElementById("reset").addEventListener('dblclick', () => {
   for (let j = 0; j < emojicount; j++) {
     for(let i = 1; i <= 10; i++) {
         var test = document.getElementById(`${emojis[j]}-${i}`);
-        if (j <= 5) {
+        if (j <= (emojicount / 2) - 1) {
           test.style.top = 5 + (20*j)+'px';
           test.style.left = 33+`rem`;
         } else {
-          test.style.top = 5 + (20*(j-6))+'px';
+          test.style.top = 5 + (20*(j-(emojicount / 2)))+'px';
           test.style.left = 35.5+'rem';
         }
     }
@@ -284,6 +292,192 @@ for (let i = 0; i < d.length; i++) {
     }
   })
 }
+
+
+var background_color = document.getElementById("background-color");
+var primary_color = document.getElementById("primary-color");
+var font_color = document.getElementById("font-color");
+var dates_color = document.getElementById("dates-color");
+var color_div = document.getElementById("colordiv");
+document.getElementById("color-palette").addEventListener('click', () => {
+  if (background_color.style.display !== "none") {
+      background_color.style.display = "none";
+  } else {
+      background_color.style.display = "block";
+  }
+  if (primary_color.style.display !== "none") {
+      primary_color.style.display = "none";
+  } else {
+      primary_color.style.display = "block";
+  }
+  if (font_color.style.display !== "none") {
+    font_color.style.display = "none";
+  } else {
+    font_color.style.display = "block";
+  }
+  if (dates_color.style.display !== "none") {
+    dates_color.style.display = "none";
+  } else {
+    dates_color.style.display = "block";
+  }
+  if (color_div.style.display !== "none") {
+    color_div.style.display = "none";
+  } else {
+    color_div.style.display = "block";
+  }
+});
+
+document.getElementById("bg-1").addEventListener('click', () => {
+  var calendar = document.getElementById("calendar");
+  calendar.style.backgroundColor = "white";
+  let color = window.getComputedStyle(calendar).color;
+  if (color == "rgb(238, 238, 238)") {
+    calendar.style.color = "black";
+    localStorage.setItem("daycolor", "black");
+  }
+  localStorage.setItem("bg", "white");
+})
+document.getElementById("bg-2").addEventListener('click', () => {
+  var calendar = document.getElementById("calendar");
+  calendar.style.backgroundColor = "#222227";
+  localStorage.setItem("bg", "#222227");
+  let color = window.getComputedStyle(calendar).color;
+  if (color == "rgb(0, 0, 0)") {
+    calendar.style.color = "rgb(238, 238, 238)";
+    localStorage.setItem("daycolor", "rgb(238, 238, 238)");
+  }
+})
+
+const num_colors = 34;
+const colors = [
+  "firebrick",
+  "red",
+  "crimson",
+  "orangered",
+  "orange",
+  "gold",
+  "green",
+  "#167e56",
+  "seagreen",
+  "springgreen",
+  "limegreen",
+  "blue",
+  "royalblue",
+  "deepskyblue",
+  "lightskyblue",
+  "darkturquoise",
+  "aquamarine",
+  "aqua",
+  "blueviolet",
+  "darkviolet",
+  "orchid",
+  "violet",
+  "#ff6666",
+  "palevioletred",
+  "pink",
+  "lavenderblush",
+  "beige",
+  "azure",
+  "lightskyblue",
+  "mistyrose",
+  "lemonchiffon",
+  "mintcream",
+  "#eee",
+  "black"
+];
+
+let topcolor = "aqua";
+let bg = "#222227";
+let daycolor = "#eee";
+let headercolor = "#167e56";
+try {
+  topcolor = localStorage.getItem("topcolor");
+} catch{
+}
+try {
+  bg = localStorage.getItem("bg");
+} catch{
+}
+try {
+  daycolor = localStorage.getItem("daycolor");
+} catch{
+}
+try {
+  headercolor = localStorage.getItem("headercolor");
+} catch{
+}
+document.getElementById("fo-0").style.color = topcolor;
+document.getElementById("dates-0").style.color = daycolor;
+document.getElementById("pr-0").style.color = headercolor;
+
+
+var langle = document.getElementById("langle");
+var rangle = document.getElementById("rangle");
+var monthword = document.getElementById("monthword");
+var dateword = document.getElementById("dateword");
+var calendar = document.getElementById("calendar");
+var month = document.getElementById("month");
+var today = document.getElementById("today");
+for (let x = 1; x <= num_colors; x++) {
+  document.getElementById(`fo-${x}`).addEventListener('click', () => {
+    var color = colors[x-1];
+    //var langle = document.getElementById("langle");
+    langle.style.color = color;
+    //var rangle = document.getElementById("rangle");
+    rangle.style.color = color;
+    // var monthword = document.getElementById("monthword");
+    // var dateword = document.getElementById("dateword");
+    monthword.style.color = color;
+    dateword.style.color = color;
+    localStorage.setItem("topcolor", color);
+    document.getElementById("fo-0").style.color = color;
+  });
+  document.getElementById(`dates-${x}`).addEventListener('click', () => {
+    var color = colors[x-1];
+    //var calendar = document.getElementById("calendar");
+    //this line down here changes the font text so do with that what you will
+    calendar.style.color = color;
+    //calendar.style.backgroundColor = color;
+    localStorage.setItem("daycolor", color);
+    document.getElementById("dates-0").style.color = color;
+  });
+  document.getElementById(`pr-${x}`).addEventListener('click',() => {
+    var color = colors[x-1];
+    //var month = document.getElementById("month");
+    month.style.backgroundColor = color;
+    var today = document.getElementById("today");
+    today.style.backgroundColor = color;
+    localStorage.setItem("headercolor", color);
+    document.getElementById("pr-0").style.color = color;
+  })
+}
+
+document.getElementById("layout-reset").addEventListener('click', () => {
+  langle.style.color = "aqua";
+  rangle.style.color = "aqua";
+  monthword.style.color = "aqua";
+  dateword.style.color = "aqua";
+  localStorage.setItem("topcolor", "aqua");
+  calendar.style.color = "#eee";
+  calendar.style.backgroundColor = "#222227";
+  localStorage.setItem("bg", "#222227");
+  localStorage.setItem("daycolor", "#eee")
+  month.style.backgroundColor = "#167e56";
+  var today = document.getElementById("today");
+  today.style.backgroundColor = "#167e56";
+  localStorage.setItem("headercolor", "#167e56");
+})
+
+
+langle.style.color = topcolor;
+rangle.style.color = topcolor;
+monthword.style.color = topcolor;
+dateword.style.color = topcolor;
+calendar.style.color = daycolor;
+calendar.style.backgroundColor = bg;
+month.style.backgroundColor = headercolor;
+today.style.backgroundColor = headercolor;
+
 
 /*var isClicked = false;
 var currentbox = "";

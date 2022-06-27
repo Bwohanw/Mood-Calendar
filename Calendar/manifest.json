@@ -1,7 +1,7 @@
 {
     "name": "Mood Calendar",
     "description": "Calendar that tracks your moods for each day",
-    "version": "1.2",
+    "version": "1.3",
     "manifest_version": 3,
     "action": {
         "default_icon": {
