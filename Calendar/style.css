@@ -39,6 +39,10 @@ body {
 }
 
 
+#toggle:hover{
+  cursor:pointer;
+}
+
 .emojilist{
   width:5rem;
   height: 5rem;
@@ -258,15 +262,19 @@ body {
   padding-left: 19rem;
 }
 
+#color-palette:hover {
+  cursor:pointer;
+}
+
 .colordiv {
   overflow-y:auto;
-  width: 90px;
+  width: 92px;
   height: 100px;
 }
 
 .colordiv-kid {
   float:left;
-  padding: 2px;
+  padding: 1px;
 }
 
 .background-color {
