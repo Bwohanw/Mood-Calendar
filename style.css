@@ -1,0 +1,620 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+body {
+  margin: 0px !important;
+  border-radius: 5px;
+}
+
+  .container {
+    width: 100%;
+    height: 52rem;
+    /*background-color: #12121f;*/
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .calendar {
+    width: 44.7975rem;
+    height: 52rem;
+    background-color: #222227;
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+    position:relative;
+  }
+
+  
+.button:hover {
+  cursor: pointer;
+  border-color:#222227
+}
+
+
+#toggle:hover{
+  cursor:pointer;
+}
+
+.emojilist{
+  width:5rem;
+  height: 5rem;
+  display:flex;
+  overflow-x: hidden;
+  overflow-y:auto;
+}
+
+.wrapper{
+  padding: 0px 0px 0px 0px;
+}
+
+[id^="happy-"]{
+  position:absolute;
+  top:5px;
+  left: 33rem;
+}
+[id^="cool-"]{
+  position:absolute;
+  top:25px;
+  left: 33rem;
+}
+[id^="relief-"]{
+  position:absolute;
+  top: 45px;
+  left: 33rem;
+}
+[id^="whatever-"]{
+  position:absolute;
+  top:65px;
+  left: 33rem;
+}
+[id^="frown-"]{
+  position:absolute;
+  top:85px;
+  left: 33rem;
+}
+[id^="anxious-"]{
+  position:absolute;
+  top:105px;
+  left: 33rem;
+}
+[id^="wink-"]{
+  position:absolute;
+  top:5px;
+  left: 35.5rem;
+}
+[id^="sob-"]{
+  position:absolute;
+  top:25px;
+  left: 35.5rem;
+}
+[id^="eyeroll-"]{
+  position:absolute;
+  top:45px;
+  left: 35.5rem;
+}
+[id^="grimace-"]{
+  position:absolute;
+  top:65px;
+  left: 35.5rem;
+}
+[id^="pissed-"]{
+  position:absolute;
+  top:85px;
+  left: 35.5rem;
+}
+[id^="wtf-"]{
+  position:absolute;
+  left:35.5rem;
+  top: 105px;
+}
+
+[id^="determined-"]{
+  position:absolute;
+  left:35.5rem;
+  top:125px;
+}
+[id^="cowboy-"]{
+  position:absolute;
+  left:33rem;
+  top:125px;
+}
+[id^="angel-"]{
+  position:absolute;
+  left:33rem;
+  top:145px;
+}
+[id^="devil-"]{
+  position:absolute;
+  left:35.5rem;
+  top:145px;
+}
+
+/*#test-1{
+  position:absolute;
+  top: 10px;
+}
+#test-2{
+  position:absolute;
+  top:20px;
+}*/
+
+
+
+  .month {
+    width: 100%;
+    height: 10rem;
+    background-color: #167e56;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    text-align: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  }
+  
+  .month i {
+    font-size: 2.5rem;
+    cursor: pointer;
+    color:aqua;
+  }
+  
+  .month h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+    color:aqua;
+  }
+  
+  .month p {
+    font-size: 1.6rem;
+    /*color:aqua;*/
+  }
+
+  .date p {
+    color:aqua;
+  }
+
+
+  .weekdays {
+    width: 100%;
+    height: 5rem;
+    padding: 0 0.4rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .weekdays div {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    width: calc(44.2rem / 7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);*/
+  }
+  
+  .days {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.2rem;
+  }
+  
+  .days div {
+    font-size: 1.4rem;
+    margin: 0.3rem;
+    width: calc(40.2rem / 7);
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);*/
+    transition: background-color 0.2s;
+  }
+  
+  .days div:hover:not(.today) {
+    /*background-color: #262626;*/
+    border: 0.2rem solid #777;
+    cursor: pointer;
+  }
+  
+  .prev-date,
+  .next-date {
+    color: dimgray;
+  }
+  
+  .today {
+    background-color: #167e56;
+  }
+.today:hover {
+    border: .2rem solid #777;
+    cursor: pointer;
+}
+
+.remove {
+  border-radius:2px;
+  font-size: 2rem;
+  border: 2px solid #167e56;
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  height:28rem;
+  width:100%;
+  border: .1px solid dimgray;
+}
+.notes {
+  font-size:2rem;
+  border-radius: 2rem;
+  justify-content: center;
+  padding-left: 19rem;
+}
+
+#color-palette:hover {
+  cursor:pointer;
+}
+
+.colordiv {
+  overflow-y:auto;
+  width: 92px;
+  height: 100px;
+}
+
+.colordiv-kid {
+  float:left;
+  padding: 1px;
+}
+
+.background-color {
+  width:2px;
+  float:left;
+  position:relative;
+}
+
+.dates-color {
+  width:2px;
+  float:left;
+  position:relative;
+}
+
+.primary-color {
+  width:2px;
+}
+
+.font-color {
+  width:2px;
+}
+
+
+.bg-1 {
+  color:azure;
+}
+
+.bg-2 {
+  color:#222227;
+}
+
+.layout-reset {
+  color:#eee;
+}
+
+.dates-1 {
+  color:firebrick;
+}
+.dates-2 {
+  color:red;
+}
+.dates-3 {
+  color: crimson;
+}
+.dates-4 {
+  color:orangered ;
+}
+.dates-5 {
+  color: orange;
+}
+.dates-6 {
+  color: gold;
+}
+.dates-7 {
+  color: green;
+}
+.dates-8 {
+  color:#167e56;
+}
+.dates-9 {
+  color:seagreen;
+}
+.dates-10 {
+  color: springgreen;
+}
+.dates-11 {
+  color: limegreen;
+}
+.dates-12 {
+  color: blue;
+}
+.dates-13 {
+  color: royalblue;
+}
+.dates-14 {
+  color: deepskyblue;
+}
+.dates-15 {
+  color:lightskyblue;
+}
+.dates-16 {
+  color:darkturquoise;
+}
+.dates-17 {
+  color: aquamarine;
+}
+.dates-18 {
+  color: aqua;
+}
+.dates-19 {
+  color: blueviolet;
+}
+.dates-20 {
+  color: darkviolet;
+}
+.dates-21 {
+  color: orchid;
+}
+.dates-22 {
+  color:violet;
+}
+.dates-23 {
+  color:#ff6666;
+}
+.dates-24 {
+  color: palevioletred;
+}
+.dates-25 {
+  color: pink;
+}
+.dates-26 {
+  color: lavenderblush;
+}
+.dates-27 {
+  color: beige;
+}
+.dates-28 {
+  color: azure;
+}
+.dates-29 {
+  color:lightskyblue;
+}
+.dates-30 {
+  color:mistyrose;
+}
+.dates-31 {
+  color: lemonchiffon;
+}
+.dates-32 {
+  color: mintcream;
+}
+.dates-33 {
+  color: #eee;
+}
+.dates-34 {
+  color: black;
+}
+
+.pr-1 {
+  color:firebrick;
+}
+.pr-2 {
+  color:red;
+}
+.pr-3 {
+  color: crimson;
+}
+.pr-4 {
+  color:orangered ;
+}
+.pr-5 {
+  color: orange;
+}
+.pr-6 {
+  color: gold;
+}
+.pr-7 {
+  color: green;
+}
+.pr-8 {
+  color:#167e56;
+}
+.pr-9 {
+  color:seagreen;
+}
+.pr-10 {
+  color: springgreen;
+}
+.pr-11 {
+  color: limegreen;
+}
+.pr-12 {
+  color: blue;
+}
+.pr-13 {
+  color: royalblue;
+}
+.pr-14 {
+  color: deepskyblue;
+}
+.pr-15 {
+  color:lightskyblue;
+}
+.pr-16 {
+  color:darkturquoise;
+}
+.pr-17 {
+  color: aquamarine;
+}
+.pr-18 {
+  color: aqua;
+}
+.pr-19 {
+  color: blueviolet;
+}
+.pr-20 {
+  color: darkviolet;
+}
+.pr-21 {
+  color: orchid;
+}
+.pr-22 {
+  color:violet;
+}
+.pr-23 {
+  color:#ff6666;
+}
+.pr-24 {
+  color: palevioletred;
+}
+.pr-25 {
+  color: pink;
+}
+.pr-26 {
+  color: lavenderblush;
+}
+.pr-27 {
+  color: beige;
+}
+.pr-28 {
+  color: azure;
+}
+.pr-29 {
+  color:lightskyblue;
+}
+.pr-30 {
+  color:mistyrose;
+}
+.pr-31 {
+  color: lemonchiffon;
+}
+.pr-32 {
+  color: mintcream;
+}
+.pr-33 {
+  color: #eee;
+}
+.pr-34 {
+  color: black;
+}
+
+.fo-1 {
+  color:firebrick;
+}
+.fo-2 {
+  color:red;
+}
+.fo-3 {
+  color: crimson;
+}
+.fo-4 {
+  color:orangered ;
+}
+.fo-5 {
+  color: orange;
+}
+.fo-6 {
+  color: gold;
+}
+.fo-7 {
+  color: green;
+}
+.fo-8 {
+  color:#167e56;
+}
+.fo-9 {
+  color:seagreen;
+}
+.fo-10 {
+  color: springgreen;
+}
+.fo-11 {
+  color: limegreen;
+}
+.fo-12 {
+  color: blue;
+}
+.fo-13 {
+  color: royalblue;
+}
+.fo-14 {
+  color: deepskyblue;
+}
+.fo-15 {
+  color:lightskyblue;
+}
+.fo-16 {
+  color:darkturquoise;
+}
+.fo-17 {
+  color: aquamarine;
+}
+.fo-18 {
+  color: aqua;
+}
+.fo-19 {
+  color: blueviolet;
+}
+.fo-20 {
+  color: darkviolet;
+}
+.fo-21 {
+  color: orchid;
+}
+.fo-22 {
+  color:violet;
+}
+.fo-23 {
+  color:#ff6666;
+}
+.fo-24 {
+  color: palevioletred;
+}
+.fo-25 {
+  color: pink;
+}
+.fo-26 {
+  color: lavenderblush;
+}
+.fo-27 {
+  color: beige;
+}
+.fo-28 {
+  color: azure;
+}
+.fo-29 {
+  color:lightskyblue;
+}
+.fo-30 {
+  color:mistyrose;
+}
+.fo-31 {
+  color: lemonchiffon;
+}
+.fo-32 {
+  color: mintcream;
+}
+.fo-33 {
+  color: #eee;
+}
+.fo-34 {
+  color: black;
+}
